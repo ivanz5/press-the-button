@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Simple Button</string>
+    <string name="best">Рекорд:&#160;</string>
+    <string name="reset_message">Вы уверены что хотите сбросить лучшее время?</string>
+    <string name="reset_confirm">Сбросить</string>
+    <string name="reset_cancel">Отмена</string>
+    <string name="reset_title">Сбросить рекорд</string>
+</resources>

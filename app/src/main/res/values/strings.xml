@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Simple Button</string>
+    <string name="action_settings" translatable="false">Settings</string>
+    <string name="best">Best:&#160;</string>
+    <string name="reset_message">Are you sure you want to reset best time?</string>
+    <string name="reset_confirm">Reset</string>
+    <string name="reset_cancel">Cancel</string>
+    <string name="reset_title">Reset best time</string>
+</resources>
