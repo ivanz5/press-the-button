@@ -3,9 +3,6 @@
     <stroke
         android:color="@color/pink_100"
         android:width="2dp" />
-    <gradient
-        android:angle="0"
-        android:startColor="@color/brown_500"
-        android:endColor="@color/brown_500"
-        android:type="linear" />
+    <solid
+        android:color="@color/brown_500"/>
 </shape>

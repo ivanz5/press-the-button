@@ -6,4 +6,6 @@
     <string name="reset_confirm">Reset</string>
     <string name="reset_cancel">Cancel</string>
     <string name="reset_title">Reset best time</string>
+    <string name="default_text_time" translatable="false">0:00.00</string>
+    <string name="default_text_best">Best: 0:00.00</string>
 </resources>

@@ -5,6 +5,8 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.MotionEvent;
@@ -16,11 +18,11 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
-    View startButton;
     Circle buttonOverlay;
     static float density;
     static boolean pressed = false;
     static TextView timeTextView, bestTextView;
+    Typeface robotoThin;
 
     final static int HIDE = 0;
     final static int SHOW = 1;
@@ -46,10 +48,14 @@ public class MainActivity extends Activity {
     }
 
     private void setVariables(){
-        startButton = findViewById(R.id.startButton);
         buttonOverlay = (Circle)findViewById(R.id.buttonOverlay);
         timeTextView = (TextView)findViewById(R.id.timeTextView);
         bestTextView = (TextView)findViewById(R.id.bestTextView);
+        if (Build.VERSION.SDK_INT < 16) {
+            robotoThin = Typeface.createFromAsset(getAssets(), "fonts/Roboto-Thin.ttf");
+            timeTextView.setTypeface(robotoThin);
+            bestTextView.setTypeface(robotoThin);
+        }
 
         buttonOverlay.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -74,6 +80,7 @@ public class MainActivity extends Activity {
 
         preferences = getSharedPreferences(NAME_PREFERENCES, Context.MODE_PRIVATE);
         editor = preferences.edit();
+        editor.apply();
         showBestScore(saveBestScore(0));
     }
 
@@ -90,7 +97,8 @@ public class MainActivity extends Activity {
     }
 
     public static void showBestScore(int score){
-        bestTextView.setText(bestString + getTimeFromMillis(score));
+        String bestStr = bestString + getTimeFromMillis(score);
+        bestTextView.setText(bestStr);
     }
 
     public void resetBestScore(View view){

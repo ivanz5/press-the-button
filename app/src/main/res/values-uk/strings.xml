@@ -6,4 +6,5 @@
     <string name="reset_confirm">Скинути</string>
     <string name="reset_cancel">Скасувати</string>
     <string name="reset_title">Скинути рекорд</string>
+    <string name="default_text_best">Рекорд: 0:00.00</string>
 </resources>
